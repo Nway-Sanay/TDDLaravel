@@ -12,13 +12,18 @@ class ProjectsTest extends TestCase
 
     /** @test */
     public function a_user_can_create_a_project(){
+
+        $this->withoutExceptionHandling();
+
         $attr = [
             'title' => $this->faker->sentence,
-            'body' => $this->faker->paragraph
+            'description' => $this->faker->paragraph
         ];
 
         $this->post('/project', $attr);
 
         $this->assertDatabaseHas('projects', $attr);
+
+        $this->get('/project')->assertSee($attr['title']);
     }
 }

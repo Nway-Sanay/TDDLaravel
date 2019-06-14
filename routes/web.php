@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    phpinfo();
+//    return view('welcome');
+});
+
+
+Route::post('/project', function (){
+    App\Project::create(request(['title', 'description']));
+});
+
+Route::get('/project', function (){
+    $projects = App\Project::all();
+
+    return view('projects.index', compact('projects'));
 });

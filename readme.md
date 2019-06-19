@@ -16,7 +16,7 @@ Install sqlite driver
 
 Use sqlite not to change data in local db every time you run the test
 
-
+Set alias instead of using vendor/.../.../
 
 ## License
 

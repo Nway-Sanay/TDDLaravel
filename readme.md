@@ -12,6 +12,12 @@
 
 Learn TTD with Laravel
 
+Install sqlite driver
+
+Use sqlite not to change data in local db every time you run the test
+
+
+
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).

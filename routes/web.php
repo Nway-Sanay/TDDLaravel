@@ -18,12 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::post('/project', function (){
-    App\Project::create(request(['title', 'description']));
-});
+Route::post('/project', 'ProjectsController@store');
 
-Route::get('/project', function (){
-    $projects = App\Project::all();
-
-    return view('projects.index', compact('projects'));
-});
+Route::get('/project', 'ProjectsController@index');
